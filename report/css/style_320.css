@@ -1,0 +1,150 @@
+
+@media screen and (max-width: 479px) {
+    .loadPdf{
+
+        font-size:3rem!important;
+        line-height:100px!important;
+        width:150px!important;
+        height:100px!important;
+        border-radius:10px!important;
+
+
+    }
+    /*封面*/
+    .report_1_Arrow div:nth-child(1) {
+        font-size:2rem!important;
+    }
+    .report_1_textTitle h1{
+        font-size:4.5rem!important;
+    }
+    .report_1_textContain div span {
+        font-size:2.5rem!important;
+    }
+    .report_1_textTitle3 h4{
+        font-size:3rem!important;
+    }
+    .report_1_textTitle3 div{
+        font-size:2.5rem!important;
+    }
+    /*正文*/
+    .secondPage_contain>div>h3{
+        font-size:3rem!important;
+    }
+    .secondPage_contain>div> ul li {
+        font-size:2.5rem!important;
+
+    }
+    .secondPage_contain .ospan2{
+        font-size:2.5rem!important;
+    }
+    .part_1 div h3{
+        font-size:3rem!important;
+    }
+    .part_1 .part_1_wktr{
+        font-size:2.5rem!important;
+    }
+    .part_2 div h3{
+        font-size:3rem!important;
+    }
+    .part_3 div h3{
+        font-size:3rem!important;
+    }
+    .part_4 div h3{
+        font-size:3rem!important;
+    }
+    .table_week td {
+        /*color: red;*/
+        font-size:2.2rem!important;
+    }
+    .tableMonth tr,th,td{
+        font-size:2.2rem!important;
+    }
+    .testBySelf{
+        font-size: 2em!important;
+    }
+    .part2_survey_P{
+        font-size: 1.8em!important;
+    }
+    .knowledgeName h4{
+        font-size: 2em!important;
+    }
+    .knowledgeName h5{
+        font-size: 2em!important;
+    }
+    .part_3_survey_P{
+        font-size:2em!important;
+    }
+    /*错题*/
+    .jiange{
+        font-weight: 900;
+    }
+    .paoxi div{
+        font-size: 2.5rem!important;
+    }
+    .exercisesStyle b{
+
+        font-size:  2.5rem!important;
+    }
+
+    /*.exercisesStyle h4 div{*/
+    /*font-size: 1.2em!important;*/
+    /*}*/
+    .exercisesStyle h4 p{
+        font-size: 2.5rem!important;
+    }
+    /*.exercisesStyle h4 div{*/
+    /*font-size: 1em;*/
+    /*}*/
+    .exercisesStyle h4>div>div{
+        font-size:  2.5rem!important;
+    }
+    .exercisesStyle h4 div div p{
+        font-size: 2.5rem!important;
+    }
+    .exercisesStyle{
+        margin-bottom:12px;
+
+
+    }
+    .exercisesStyle>span div{
+        display: inline-block;
+    }
+    .exercisesStyle p{
+        display: block;
+    }
+    .exercisesStyle h4 div{
+        margin-top: 8px;
+    }
+    .exercisesStyle h4 div>div{
+        margin-top: 8px;
+    }
+    .ansSelectLIst{
+        font-size:  2.5rem!important;
+    }
+    .ansSelectLIst div{
+        display: inline-block;
+        font-size:   2.5rem!important;
+    }
+    .exercisesStyle b{
+
+        font-size:   2.5rem!important;
+    }
+    .jiange{
+        margin-top:10px;
+        margin-bottom: 5px;
+    }
+    .paoxi div{
+        margin-top:5px;
+        font-size:  2.5rem!important;
+    }
+    .paoxi{
+        font-size:  2.5rem!important;
+    }
+    .totalAbility2 .ospan2{
+        font-size:2.5rem!important;
+    }
+    .scoreDistribution tr td{
+        font-size:2.5rem!important;
+    }
+
+}

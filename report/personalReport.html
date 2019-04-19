@@ -1,0 +1,274 @@
+<!DOCTYPE html >
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>个人报告</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <script src="js/script/jquery.min.js"></script>
+  <script src="js/hightchart/highcharts.js"></script>
+  <script src="js/hightchart/highcharts-more.js"></script>
+  <script src="js/hightchart/themes/grid-light.js"></script>
+  <script src="js/hightchart/modules/exporting.js"></script>
+  <script src="js/hightchart/modules/solid-gauge.js"></script>
+  <script src="js/hightchart/modules/solid-gauge.src.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://img2.51youpu.com/css/question.css"/>
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 479px)" href="css/style_320.css" />
+  <link rel="stylesheet" type="text/css" href="css/css_student.css" />
+</head>
+<body>
+<div id="jiazai" class="loading-style-15">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <p style="font-size:18px;margin-top: 25px;margin-left: -25px">加载中...</p>
+</div>
+<div id="delay" class="delay" style="display: none;margin-top: 10px;">
+    <div class="reportModel clearfix">
+      <div class="report_1_gress">
+        <img src="images/gress.png" alt="" />
+      </div>
+    <div>
+      <a id="loadPdf" onclick="downloadPdf()" class=" loadPdf">下载PDF</a>
+    </div>
+    <div class="report_1_Arrow text-center">
+      <div class="text-center"><span class="teachWeek"></span></div>
+      <div></div>
+    </div>
+
+    <div class="pull-left report_1_vertical"></div>
+    <div class="pull-left report_1_contain">
+      <div class="report_1_textTitle text-center" id="personalInfo">
+        <h1><span></span></h1>
+        <h1>学情分析报告<span style="font-size:35px;text-align: center"></span></h1>
+      </div>
+      <div class="report_1_textTitle2 text-center clearfix">
+        <div class="report_1_textContain">
+          <div class="row"><span class="col-xs-5">学校:</span><span class="col-xs-7 faceDetail"></span></div>
+          <div class="row laoshi"><span class="col-xs-5">老师:</span><span class="col-xs-7 faceDetail"></span></div>
+          <div class="row"><span class="col-xs-5">教材版本:</span><span class="col-xs-7 faceDetail"></span></div>
+        </div>
+      </div>
+      <div class="report_1_textTitle3 text-center">
+      	<!-- 20190402 heshao 将 铭仁教育 改成 有谱AI+精准教学中心 -->
+        <!--<h4 style="color: #87b6e0;margin-bottom: 20px">铭仁教育</h4>-->
+        <h4 style="color: #87b6e0;margin-bottom: 20px">有谱AI+精准教学中心</h4>
+        <div><span class="faceDetail"></span></div>
+      </div>
+    </div>
+  </div>
+  <!-- 第二页-->
+  <div class="container reportModel secondPage">
+    <div class="report_nav">
+      <span class="yemei"></span>
+    </div>
+    <div class="container secondPage_contain">
+      <h1><b>摘要：</b></h1>
+      <div>
+        <h3><b>1、答题数据</b></h3>
+        <ul>
+          <li id="testDate">本次测试得分 <span></span> 分。<span></span>
+          </li>
+          <li>
+            本次测试试卷涉及知识点 <span id="testDate_app"></span> 个。
+          </li>
+        </ul>
+      </div>
+      <div id="judgeProblem">
+        <h3><b>2、问题发现</b></h3>
+        <p id="fs_goodword" style="font-size: 18px;color: #00b3ee;padding-left: 38px;display: none">你本次的知识点学的比较好，请继续努力！</p>
+
+        <ul id="fs_problem" >
+          <li id="judgefindProblem">通过分析发现你的 <span class="findProblem" id="findProblem"></span>
+            等知识点较薄弱。
+          </li>
+          <li id="judgefindabilitiy">
+            通过分析发现你的 <span class="findabilitiy" id="findabilitiy"></span> 等学科能力较薄弱。
+          </li>
+          <li id="judgefindthought">
+            通过分析发现你的 <span class="findabilitiy" id="thought"></span> 等思想方法较薄弱。
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="judge">
+    <div class="container reportModel">
+      <div class="report_nav">
+        <span class="yemei"></span>
+      </div>
+      <div class="report_body ">
+        <div class="part_1">
+          <h1><b>一、本次测试分析</b></h1>
+          <div id='pId_one'>
+            <h3><b>1、本次测试得分</b></h3>
+            <div class="text-center">
+              <span id="studentScore" style="font-size: 36px;color: #0082b9"></span><span id="totalScore" style="font-size: 24px;color: #0082b9"></span>
+            </div>
+          </div>
+          <div id='pId_two'>
+            <div>
+              <h3><b>2、本次测试知识点分析：</b></h3>
+              <h3><b>概况</b></h3>
+              <p class="part2_survey_P">本次共测试了 <b><span class="posintState"></span></b> 个知识点，你的知识点掌握状态分布如下：</p>
+              <div class="part2_Survey juzhong" id="part2_Survey" style="max-width:100%;height:400px"></div>
+              <h3><b>明细</b></h3>
+              <table id="pointDetails" cellspacing="0" cellpadding="0" class="table_week table_weekNomal text-center">
+                <tr>
+                  <td>知识点名称</td>
+                  <td>本次测试状态</td>
+                  <td>得分率</td>
+                </tr>
+              </table>
+            </div>
+            <div id="fs_weekPoint">
+              <h3><b>薄弱知识点及其讲解</b></h3>
+              <div class="knowledgeName" id="knowledgeName"></div>
+            </div>
+          </div>
+          <div id='pId_three'>
+            <div>
+              <h3><b>3、本次测试学科能力和思想方法分析：</b></h3>
+              <table id="abilityAndThoughtDetails" cellspacing="0" cellpadding="0" class="table_week text-center" style="max-width: 738px">
+                <tr>
+                  <td>学科能力和思想方法</td>
+                  <td style="width: 210px;">本次测试涉及分值</td>
+                  <td>你的得分</td>
+                  <td>得分率</td>
+                </tr>
+              </table>
+              <div id="subjectMap" style="max-width:100%;height:400px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="part_2">
+        <h1><b>二、学习建议</b></h1>
+        <div id="strongPrectice" style="margin-top: 50px">
+          <h3><b><span id="strongNum"></span>强化练习 </b></h3>
+          <!--<div class="clearfix" style="height: 60px">-->
+            <!--<span id="s_word" style="font-size: 1.6rem"><b>（认真答题，用 App 扫二维码查看题目和答案）</b></span> <span class="pull-right" style="position: relative;top:-35px"><img id="S_practice" src=" " alt=""/></span>-->
+          <!--</div>-->
+          <div class="clearfix" style="height: 60px">
+            <span id="s_word" style="font-size: 1.6rem"><b>（认真答题，用 App 查看题目和答案）</b></span>
+          </div>
+          <div id="intensiveExercise">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 尾页-->
+  <div class="container reportModel">
+    <div class="report_nav">
+      <span class="yemei"> </span>
+    </div>
+    <div class="Last_page_logo text-center">
+    	<!-- 20190402 heshao 将 LOGO 换成 ai 系统中的LOGO -->
+      <!--<img src="images/logo-07.png"/>-->
+      <img src="images/logo_blue_font.png" style="width: 400px;"/>
+    </div>
+    <!-- 20190402 heshao 将 客户端二维码 和 电话隐藏 -->
+    <!--<div class="Last_page_bottom Last_page text-center ">
+      <div class="juzhong ">
+        <div class="col-xs-6 col-xs-offset-3" style="margin-top: 30px">
+          <div class="pull-left col-xs-6">
+            <div class="Last_page_fontColor" style="margin-bottom: 10px"><b>有谱客户端</b></div >
+            <img style="width: 139px" src="images/001-weixinClinet.png" alt=""/>
+          </div>
+          <div class="pull-right col-xs-6">
+            <div class="Last_page_fontColor" style="margin-bottom: 10px"><b>有谱公众号</b></div>
+            <img style="width: 139px" src="images/001-weixinYouPu.png" alt=""/>
+          </div>
+        </div>
+        <div class="col-xs-6 col-xs-offset-3" style="margin-top: 50px;border-top: 2px solid #ea6427;height: 50px;line-height: 50px">
+          <p style="font-family: 'KaiTi','SimSun';font-size: 1.3em;height: 50px;line-height: 50px"><b>联系电话：010-51722488</b></p>
+        </div>
+      </div>
+    </div>-->
+  </div>
+</div>
+</body>
+<script id="script_basic" type="text/javascript">
+  //动态加载生成js 脚本文件：
+  //----------判断加载脚本----------
+  function makeScipt(Type){
+    var strScript=document.createElement("script");
+    strScript.type="text/javascript";
+      strScript.src='js/script/personalReport.js';
+    document.body.appendChild(strScript);
+  }
+  //页面加载----------------------------------
+  //数据集合——————————————————————————————————————————
+  function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null){
+      return unescape(r[2]);
+    }
+    return null;
+  }
+  var reportId=getUrlParam("id");
+  var reportUid=getUrlParam("uid");
+  var reportSid=getUrlParam("sid");
+  var loadPdf=document.getElementById("loadPdf");
+
+  function getReportDetail(apiUrlByWindowLocation){
+    function getLabelsGet(){
+      var id = reportId;
+      // var url="http://das.51youpu.com/das/jp/modeltest/getReport?"+'testId='+id;
+      // var url="http://120.27.195.10:8090/das/jp/modeltest/getReport?"+'testId='+id;
+      var url= apiUrlByWindowLocation + "/das/jp/modeltest/getReport?"+'testId='+id;
+      $.getJSON(url,function(result){
+        PersonReportData=result.report;
+        contentType=result.contentType;
+        perId=1;
+        var Type = result.testType;
+        //处理js脚本
+        makeScipt(Type);
+      });
+    }
+    getLabelsGet();
+  }
+  window.onload=function(){
+    var window_href = window.location.href;
+  	if(window_href.indexOf('http://aitest.emingren.cn') > -1){
+  		var apiurlByLocalHref = 'http://120.27.195.10:8090';
+  	}else{
+  		var apiurlByLocalHref = 'http://das.51youpu.com';
+  	}
+    getReportDetail(apiurlByLocalHref);
+  };
+
+  var browserRedirect=  function() {
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+      var loadPdf=document.getElementById("loadPdf");
+      loadPdf.style.display="none";
+    }
+  };
+  browserRedirect();
+
+  function downloadPdf(){
+		var window_href = window.location.href;
+  	if(window_href.indexOf('http://aitest.emingren.cn') > -1){
+  		var apiurlByLocalHref = 'http://120.27.195.10:8090';
+  	}else{
+  		var apiurlByLocalHref = 'http://das.51youpu.com';
+  	}
+    $.get(apiurlByLocalHref+"/das/learningreport/downloadNum?"+'id='+reportId );
+  }
+
+</script>
+</html>

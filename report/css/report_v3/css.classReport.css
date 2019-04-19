@@ -1,0 +1,513 @@
+/*
+.titleC：摘要 标题样式；.GYtitleContent:蓝色箭头标题；
+ */
+html{
+    font-size:62.5%
+}
+body{
+    font-size:12px;
+    font-size:1.2rem ; /* 12÷10=1.2 */
+}
+body p,h1,h2,h3,h4,h5,h6,b,i,div,li,tr,td{
+    /*font-family: 'SimSun','KaiTi';*/
+    font-family: 'KaiTi','SimSun';
+}
+.reportModel {
+    width:900px;
+    min-height: 1300px;
+    margin:10px auto;
+    position: relative;
+    border-bottom: 0px solid black;
+    box-shadow: 0px 0px 5px gray;
+    padding: 10px;
+    border-bottom: 0px solid black;
+    box-shadow: 0px 0px 5px gray;
+    /*background-color: #bed2db;*/
+}
+/*v4.2-学情报告弹窗******************************************STARTHERE***/
+html {
+  font-size: 62.5%
+}
+body p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+i,
+div,
+li,
+tr,
+td {
+  font-family: 'KaiTi', "SimSun";
+}
+.loadPdf{
+    display:block;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height:40px;
+    background-color: orange;
+    position:absolute;
+    width:90px;
+    height:40px;
+    top:5%;
+    right:2%;
+    color:white;
+    text-decoration:none;
+    z-index: 100;
+}
+.loadPdf:hover{
+    text-decoration:none;
+    background-color: #5b9bd5;
+    color:white;
+}
+.loadPdf:active{
+    text-decoration:none;
+}
+.FMBT{
+    height:100px;color: #4d92ce;line-height: 100px;font-size:2.5rem;padding:0 60px;margin-bottom:30px;position: absolute;
+}
+.FMBG1{
+    background-image:url('../../images/report_v3/class_bg.png');height:1025px;background-size:100%;background-repeat: no-repeat;position: relative;background-position:-5px 0;
+}
+.FMBT1{
+ padding-top:50%;
+}
+.FMBT1 header{
+    font-size:3.5rem;color: white;font-family: 'SimSun';
+    /*max-width: 240px;margin: auto;*/
+}
+.FMBT1 header span{
+    color: #5876b9;font-family: 'SimSun';
+}
+.FMBT2{
+    padding-top:20px;
+}
+.FMBT2 table{
+    margin: auto;
+}
+.FMBT2 table tr td{
+    font-size:2rem;color: #5876b9;font-weight: 900;
+}
+.FMBT2 table tr td:nth-child(2){
+    text-align: left;
+}
+.FMXX {
+    z-index: 10;padding:20px 60px;font-weight: 900;color:#433d3a;border-top:15px solid #2B50A1;;height:260px;
+}
+.FMXX div{
+    margin-bottom: 10px; font-size:1.8rem;
+    /*font-family: "Microsoft YaHei"*/
+}
+.FMXX div,span{
+    font-size:2rem;
+}
+/*标题*/
+.titleC{
+    height:50px;
+}
+.titleCom{
+    height:100%;border-bottom: 3px solid #2B50A1;min-width:150px;float:left ;position: relative;
+}
+.titleCom1{
+    height:90%;background-color: #2B50A1;float:left;line-height: 45px;padding: 0 8px;border-radius: 10px;text-align: center;display: block;
+}
+.titleComCircle{
+   position: absolute;width: 8px;height:8px;border-radius: 50%;display: block;border: 1px solid #2B50A1;background-color: white;bottom:-5px;right:-6px;
+}
+.titleCom1 span{float: left;color: white;font-size:20px;}
+.hat{
+    width:25px;height:100%;background: url('../../images/report_v3/hat.png')no-repeat center;background-size:100%;display: block;margin-right:5px;
+}
+/*概要*/
+/*页眉*/
+.pagebrow{
+  height:60px;margin-bottom:30px;padding-top:0px;
+}
+.yemei{
+    height:40px;background-color:#2B50A1;float: right;position: relative;padding:1px
+}
+.yemei span{
+    position: absolute;display: block;
+}
+.yemei span:nth-child(1){
+  width: 0;
+  height: 0;
+  border-top:15px solid white;
+  border-right: 15px solid transparent;
+  top:0;
+  left:0;
+}
+.yemei span:nth-child(2){
+  width: 0;
+  height: 0;
+  border-bottom:15px solid white;
+  border-left:15px solid transparent;
+  bottom:0;
+  right:0;
+}
+.yemei_2{
+    float:left;border: 1px solid rgb(213, 210, 218);height: 38px;border-top: none;border-right:none;line-height: 36px;padding:0 15px;color: white;font-size:18px;
+
+}
+.yemei_2_right{
+  height: 38px;border-top:2px solid white; border-right:2px solid white;width:60px; position: absolute;right: 0;margin-top:2px;margin-right:2px;
+}
+.line1{
+  position: absolute;width:60px;height:0px;top:20px;left: -60px;border: 1px solid #2B50A1;
+}
+.line2{
+  position: absolute;width:120px;height:0px;top:28px;left: -120px;border: 1px solid #2B50A1;
+}
+/*二级标题样式*/
+.subtitle{height:35px;color:#2B50A1;font-size:1.5rem;padding-top: 5px;};
+.subtitle span{display:inline-block;height: 100%;}
+.refreshTitle{
+ display:inline-block;width:30px;line-height: 30px;;background: url('../../images/report_v3/refresh.png')no-repeat center;background-size:100%;margin-right:5px;
+}
+/*第二页*/
+.testDateSpan{color: #43B0E1;};
+.subpb50{
+   padding-bottom: 50px!important;
+}
+.secondPage ul li {
+  margin-top: 3px;
+  letter-spacing: 2px
+}
+
+.secondPage_contain {
+  width: 100%;
+  height: 92%;
+}
+/*
+.secondPage_contain h1 {
+  margin-bottom: 40px;
+}*/
+
+.secondPage_contain ul li {
+  font-size: 2rem;
+  margin-top: 30px;
+  letter-spacing: 2px
+}
+
+.testAnalysis {
+  font-size: 2rem;
+}
+
+.testAnalysis ul li {
+  font-size: 2rem;
+  margin-top: 10px;
+  list-style-type: disc;
+}
+
+/*.secondPage_contain ul li div span{*/
+
+/*font-size: 20px;color:#00b0f0*/
+
+/*}*/
+.report_3_totalscore {
+  font-family: Calibri;
+  font-size: 8rem;
+  font-weight: 900;
+  color: #4471c4;
+  text-shadow: 4px 2px 3px #8a9fd6;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
+}
+
+.table_week {
+  max-width: 652px;
+  margin: 0 auto;
+}
+
+.table_week tr {
+  max-width: 652px;
+  height: 28px;
+  line-height: 2em;
+}
+
+.table_week td {
+  display: inline-block;
+  width: 95px;
+  /*border-right: 1px solid #000;*/
+  font-size: 1.6rem;
+  font-family: 'KaiTi', "SimSun";
+  line-height: 2em;
+}
+
+.table_week tr:first-child td {
+  color: white;
+
+}
+
+.table_week td:first-child {
+  width: 210px;
+}
+
+.table_week.table_weekNomal td {
+  width: 210px;
+}
+
+.table_week td:last-child {
+
+  border-right: none;
+}
+
+.table_week tr:nth-child(even) {
+  background-color: #cdcdcd;
+}
+
+.table_week tr:nth-child(odd) {}
+
+.table_week tr:first-child {
+  background-color: #002060;
+}
+
+/*月测*/
+
+.tableMonth {
+  margin: 0 auto;width: 90%;
+}
+
+.tableMonth tr,
+th,
+td {
+  font-size: 1.6rem;
+  height: 28px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.tableMonth tr:nth-child(odd) {
+  background-color: white;
+}
+
+.tableMonth tr:nth-child(even) {
+  background-color: #cdcdcd;
+}
+
+.tableMonth tr:first-child {
+  background-color: #002060;
+  color: white;
+}
+
+.tableMonth2 {
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+.tableMonth2 td {
+  font-size: 1.6rem;
+  height: 28px;
+  padding: 0 10px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.tableMonth2 tr:nth-child(odd) {
+  background-color: white;
+}
+
+.tableMonth2 tr:nth-child(even) {
+  background-color: #deeaf6;
+}
+
+.tableMonth3 {
+  min-width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.tableMonth3 td {
+  font-size: 1.4rem;
+  min-width: 23px;
+  height: 28px;
+  text-align: center;
+  padding: 0 4px;
+  border: 1px solid grey;
+}
+
+.tableMonth3 tr:nth-child(odd) {
+  background-color: white;
+}
+
+.tableMonth3 tr:nth-child(even) {
+  background-color: #deeaf6;
+}
+
+/*.tableMonth3 tr td:first-child{*/
+
+/*background-color:#002060 ;width:80px;*/
+
+/*color: white;*/
+
+/*}*/
+
+.tableMonth3 tr:first-child {
+  background-color: #002060;
+  color: white;
+}
+
+.tableMonth3 tr td:first-child {
+  background-color: #002060;
+  color: white;
+}
+
+.tableMonth3 tr:nth-child(2) td:first-child {
+  background-color: #deeaf6;
+  color: black;
+}
+
+.testBySelf {
+  font-size: 1.6rem;
+}
+
+/*第二部分*/
+
+.part2_survey_P {
+  font-size: 1.6rem;
+}
+
+.knowledgeName h5 {
+  margin-left: 1em;
+  font-size: 1.6rem;
+}
+
+.knowledgeName h4 {
+  font-weight: 600;
+}
+
+/*第三部分*/
+
+.part_3_survey_P {
+  font-size: 1.6rem;
+}
+
+/*典型错题集合*/
+
+.exercisesStyle h4 p {
+  font-size: 1.6rem;
+}
+
+/*.exercisesStyle h4 div{*/
+
+/*font-size: 1em;*/
+
+/*}*/
+
+.exercisesStyle h4>div>div {
+  font-size: 1.6rem;
+}
+
+.exercisesStyle h4 div div p {
+  font-size: 1.6rem;
+}
+
+.exercisesStyle {
+  margin-bottom: 12px;
+
+
+}
+
+.exercisesStyle>span div {
+  display: inline-block;
+}
+
+.exercisesStyle p {
+  display: block;
+}
+
+.exercisesStyle h4 div {
+  margin-top: 8px;
+}
+
+.exercisesStyle h4 div>div {
+  margin-top: 8px;
+}
+
+.ansSelectLIst {
+  font-size: 1.6rem;
+}
+
+.ansSelectLIst div {
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+.exercisesStyle b {
+  font-size: 2rem;
+}
+
+.jiange {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.paoxi div {
+  margin-top: 5px;
+  font-size: 1.6rem;
+}
+
+.paoxi {
+  font-size: 1.6rem;
+}
+
+/*尾页***
+    ********************/
+
+.Last_page_logo {
+  width: 100%;
+  margin-top: 400px;
+  margin-bottom: 320px;
+}
+
+.Last_page_logo img {
+  width: 200px;
+}
+
+.Last_page_bottom p h4 {
+  color: white;
+}
+
+.Last_page {
+  width: 100%;
+  height: 100%;
+}
+
+.juzhong {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Last_page_bottom {
+  width: 100%;
+  height: 300px;
+
+}
+
+.Last_page_fontColor {
+  background: url("images/001-textBackground.png");
+}
+
+.col-md-4.text-center.Last_page div {
+  margin-top: 60px;
+
+}
+
+.col-md-4.text-center.Last_page h4 {
+  margin-top: 100px;
+}
+
+.report_nav .yemei {
+  font-size: 1.6rem;
+}
+
+/*v4.2-学情报告弹窗******************************************ENDHERE***/
+/*补充样式*/
+.defaultImageStyle{
+  max-width: 700px;
+}
